@@ -13,6 +13,6 @@ Use the [docker-compose.yml](docker-compose.yml) for a good starting point to se
 
 ## Development
 1. Setup a PostgreSQL database
-2. Setup the [.env](.env) file accordingly
+2. Setup the [.env](.env.development) file accordingly
 3. `npm install`
 4. `npm run dev`
