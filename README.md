@@ -7,6 +7,8 @@ PostgreSQL supports creating databases with a [TEMPLATE](https://www.postgresql.
 PostgreSQL enforces there are no active connections to the database when copying or restoring. pgtt will simply terminate all connections to that database before these actions. This can result in your application crashing or not being able to connect to the database while copying.
 
 ## Usage
+[Docker image](https://github.com/BenjaminFaal/pgtt/pkgs/container/pgtt)
+
 Use the [docker-compose.yml](docker-compose.yml) for a good starting point to see how to configure and use pgtt.
 
 ## Development
