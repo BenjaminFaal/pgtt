@@ -1,0 +1,40 @@
+{
+  "name": "pgtt",
+  "version": "0.0.1",
+  "description": "pgtt is a time traveling tool for PostgreSQL to help speedup development and testing of various applications by enabling the user to easily travel between points in time. This can be useful when for example you have to test a certain mutation multiple times and want to quickly rollback to before the mutation to make changes to the behaviour and test again. This will save time and avoids setting up the data over and over again, especially in larger applications with complex data and flows.",
+  "shortDescription": "time traveling for PostgreSQL",
+  "author": {
+    "email": "benjamin_faal@hotmail.com",
+    "name": "Benjamin Faal",
+    "url": "https://github.com/BenjaminFaal"
+  },
+  "homepage": "https://github.com/BenjaminFaal/pgtt",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BenjaminFaal/pgtt"
+  },
+  "scripts": {
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "preview": "svelte-kit preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-node": "next",
+    "@sveltejs/kit": "next",
+    "@types/pg": "^8.6.1",
+    "svelte": "^3.42.1",
+    "svelte-check": "^2.2.4",
+    "svelte-preprocess": "^4.7.4",
+    "tslib": "^2.3.1",
+    "typescript": "^4.3.5"
+  },
+  "type": "module",
+  "dependencies": {
+    "carbon-components-svelte": "^0.42.2",
+    "carbon-icons-svelte": "^10.36.0",
+    "filesize": "^7.0.0",
+    "pg": "^8.7.1"
+  }
+}

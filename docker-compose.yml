@@ -1,0 +1,23 @@
+version: "2"
+services:
+  test-db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: test
+
+  pgtt:
+    build: .
+    depends_on:
+      - test-db
+    environment:
+      POSTGRES_HOST: test-db
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+      # https://www.postgresql.org/docs/current/manage-ag-templatedbs.html
+      # template1 always exists and by default allows connections
+      POSTGRES_DB: template1
+    ports:
+      - "3000:3000"
