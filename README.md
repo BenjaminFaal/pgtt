@@ -1,0 +1,2 @@
+# pgtt
+pgtt is a time traveling tool for PostgreSQL to help speedup development and testing of various applications by enabling the user to easily travel between points in time. This can be useful when for example you have to test a certain mutation multiple times and want to quickly rollback to before the mutation to make changes to the behaviour and test again. This will save time and avoids setting up the data over and over again, especially in larger applications with complex data and flows.
