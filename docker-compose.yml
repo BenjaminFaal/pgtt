@@ -9,7 +9,7 @@ services:
 
   pgtt:
     build: .
-    image: ghcr.io/benjaminfaal/pgtt:0.0.1
+    image: ghcr.io/benjaminfaal/pgtt:0.0.2
     depends_on:
       - test-db
     environment:

@@ -19,10 +19,10 @@
         Theme,
         ToastNotification,
     } from "carbon-components-svelte";
-    import Home32 from "carbon-icons-svelte/lib/Home32";
-    import DataBase32 from "carbon-icons-svelte/lib/DataBase32";
-    import Information32 from "carbon-icons-svelte/lib/Information32";
-    import LogoGithub20 from "carbon-icons-svelte/lib/LogoGithub20";
+    import Home from "carbon-icons-svelte/lib/Home.svelte";
+    import DataBase from "carbon-icons-svelte/lib/DataBase.svelte";
+    import Information from "carbon-icons-svelte/lib/Information.svelte";
+    import LogoGithub from "carbon-icons-svelte/lib/LogoGithub.svelte";
     import {page} from "$app/stores";
 
     import {toasts} from "$lib/toast";
@@ -38,15 +38,15 @@
 
     const pages: Record<string, Page> = {
         '/': {
-            icon: Home32,
+            icon: Home,
             title: 'Home'
         },
         '/databases': {
-            icon: DataBase32,
+            icon: DataBase,
             title: 'Databases',
         },
         '/info': {
-            icon: Information32,
+            icon: Information,
             title: 'Info'
         },
     }
@@ -72,7 +72,7 @@
         {/each}
     </HeaderNav>
     <HeaderUtilities>
-        <HeaderGlobalAction aria-label="GitHub" href={pkg.repository.url} target="_blank" on:click={()=>window.open(pkg.repository.url, '_blank')} icon={LogoGithub20} />
+        <HeaderGlobalAction aria-label="GitHub" href={pkg.repository.url} target="_blank" on:click={()=>window.open(pkg.repository.url, '_blank')} icon={LogoGithub} />
         <HeaderAction>
             <HeaderPanelLinks>
                 <HeaderPanelLink>

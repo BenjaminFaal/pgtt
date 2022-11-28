@@ -1,6 +1,6 @@
 <script lang="ts">
     import {createEventDispatcher, onMount} from "svelte";
-    import fileSize from 'filesize';
+    import {filesize} from 'filesize';
     import {
         Button,
         Column,
@@ -12,8 +12,8 @@
         TextArea,
         TooltipDefinition
     } from "carbon-components-svelte";
-    import Undo16 from "carbon-icons-svelte/lib/Undo16";
-    import Delete16 from "carbon-icons-svelte/lib/Delete16";
+    import Undo from "carbon-icons-svelte/lib/Undo.svelte";
+    import TrashCan from "carbon-icons-svelte/lib/TrashCan.svelte";
 
     import {COPY_INFIX} from "$lib/constants";
     import type {Copy, Database} from "$lib/types/Database";
@@ -81,7 +81,7 @@
         {key: 'datname', value: 'Name'},
         {key: 'comment', value: 'Comment', display: comment => comment || ''},
         {key: 'date', value: 'Date'},
-        {key: 'size', value: 'Size', display: fileSize},
+        {key: 'size', value: 'Size', display: filesize},
         {key: 'operations', value: 'Operations'}
     ];
 </script>
@@ -96,13 +96,13 @@
         <h4>{database.datname}</h4>
     </Link>
     <div slot="description">
-        <TooltipDefinition tooltipText={`${database.size} bytes`}>{fileSize(database.size)}</TooltipDefinition>
+        <TooltipDefinition tooltipText={`${database.size} bytes`}>{filesize(database.size)}</TooltipDefinition>
     </div>
     <div slot="cell" let:row={copy} let:cell>
         {#if cell.key === 'operations'}
-            <Button size="small" iconDescription="Restore copy" icon={Undo16}
+            <Button size="small" iconDescription="Restore copy" icon={Undo}
                     on:click={doCopyRequest.bind(this, copy, 'restore', 'POST')}/>
-            <Button kind="danger" size="small" iconDescription="Delete copy" icon={Delete16}
+            <Button kind="danger" size="small" iconDescription="Delete copy" icon={TrashCan}
                     on:click={doCopyRequest.bind(this, copy, 'delete', 'DELETE')}/>
         {:else if cell.key === 'date'}
             {new Date(parseInt(copy.datname.split(COPY_INFIX)[1])).toLocaleString()}
